@@ -1,5 +1,6 @@
 #!/bin/bash
 # Author: Herman Bonnes
+set -e
 
 # Create virtual environment
 if [ ! -d "venv" ]; then
@@ -8,10 +9,19 @@ if [ ! -d "venv" ]; then
 fi
 
 # Install dependencies
-pip install -f ./dependencies/ --no-index -r ./dependencies/requirements.txt
+# Yum
+# Microsoft SQL Server ODBC
+#sudo yum remove -y unixODBC-utf16 unixODBC-utf16-devel 
+#sudo ACCEPT_EULA=Y yum install msodbcsql17
+#sudo ACCEPT_EULA=Y yum install mssql-tools
+#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+#source ~/.bashrc
+#sudo yum install -y unixODBC-devel
+# Python
+pip3 install -f ./dependencies/ --no-index -r ./dependencies/requirements.txt
 
 # Run the application
 export FLASK_APP=index.py
-# For development
-export FLASK_ENV=development
-flask run --host=0.0.0.0
+export FLASK_ENV=development # for Development purposes
+flask run -p 80 --host=0.0.0.0

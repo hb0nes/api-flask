@@ -1,9 +1,4 @@
 .vscode/
 __pycache__/
-dependencies/Click-7.0-py2.py3-none-any.whl
-dependencies/Flask-1.0.2-py2.py3-none-any.whl
-dependencies/Jinja2-2.10-py2.py3-none-any.whl
-dependencies/MarkupSafe-1.1.0-cp37-cp37m-manylinux1_x86_64.whl
-dependencies/Werkzeug-0.14.1-py2.py3-none-any.whl
-dependencies/itsdangerous-1.1.0-py2.py3-none-any.whl
+dependencies/
 venv/
